@@ -106,7 +106,7 @@ def active():
             sm.interest_bool = False
         else:
             date = datetime.date.today() - sm.date_debts.date()
-            if date.days > 0:
+            if not sm.interest_bool and date.days > 0:
                 interest = date.days + sm.interest
                 balance = date.days + sm.balance
                 sm.balance = balance
